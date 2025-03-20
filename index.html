@@ -6,13 +6,179 @@
     <title>Fashion News</title>
 </head>
 <body>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+<style>
+
+    /* ======= MAIN NAVIGATION ======= */
+    .main-nav {
+        background-color: #012149;
+          display: flex;
+        justify-content: center;
+
+
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid #ddd;
+   position: fixed; /* Make the navbar fixed */
+    top: 0; /* Stick it to the top */
+    left: 0;
+    width: 100%; /* Ensure it spans full width */
+    z-index: 1000; /* Keep it above other elements */
+
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        max-width: 1200px;
+        
+    }
+    
+    /* Navigation Links */
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    .nav-links li {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        padding: 5px;
+        transition: 0.3s;
+    }
+    
+    .nav-links .active a {
+        border-bottom: 4px solid #ff4d00;
+    }
+    
+    .nav-links a:hover {
+        color: #ffcc00;
+    }
+    
+    /* ======= LOGO ======= */
+    .logo {
+        font-size: 75px;
+        color: white;
+        font-weight: bold;
+        text-align: right;
+    }
+    
+    /* ======= HAMBURGER MENU (MOBILE) ======= */
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+    }
+    
+    /* ======= SUB NAVIGATION ======= */
+    .sub-nav {
+        background-color: #003366;
+        padding: 10px 20px;
+        font-size: 35px;
+
+
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    position: fixed; /* Make the navbar fixed */
+    top: 0; /* Stick it to the top */
+    left: 0;
+    width: 100%; /* Ensure it spans full width */
+    z-index: 1000; /* Keep it above other elements */
+    margin-top: 15vh;
+
+    }
+    
+    .sub-nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+    }
+    
+    .sub-nav a {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+    
+    .sub-nav a:hover {
+        color: #ffcc00;
+    }
+    
+    /* ======= RESPONSIVE DESIGN ======= */
+    @media (max-width: 768px) {
+        .main-nav {
+       
+            background-color: #012149;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+
+    }
+    
+      .sub-nav {
+        background-color: #003366;
+        padding: 10px 20px;
+        font-size: 35px;
+        margin: -1.5vh;
+        margin-top: 12vh;
         }
+    .logo {
+    font-size: 38px;
+    }
+        
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: #002e69;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }
+    
+        .nav-links.show {
+            display: flex;
+        }
+    
+        .menu-toggle {
+            display: block;
+        }
+    
+        .sub-nav ul {
+            flex-direction: row;
+            text-align: left;
+            font-size: 1px;
+        }
+    }
+ 
+  
+
+
         body {
             display: flex;
             justify-content: center;
@@ -25,18 +191,21 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             padding: 20px;
+            margin-top: 18vh;
             width: 90%;
             max-width: 1200px;
+            margin-left: 16vh;
         }
         @media (max-width: 600px) {
             .container {
                 grid-template-columns: repeat(1, 1fr);
-            }
+                 margin-left: 14vh;}
         }
         .card {
             width: 250px;
             height: 350px;
             perspective: 1000px;
+            margin-top: 10vh;
         }
         .card-inner {
             width: 100%;
@@ -82,7 +251,7 @@
             font-size: 14px;
             color: #777;
         }
-        .button, .back-btn {
+        .flip-btn, .back-btn {
             margin-top: 10px;
             padding: 8px 12px;
             border: none;
@@ -93,7 +262,7 @@
             border-radius: 5px;
             transition: background 0.3s;
         }
-        .button:hover, .back-btn:hover {
+        .flip-btn:hover, .back-btn:hover {
             background-color: #0056b3;
         }
         .card-back {
@@ -105,8 +274,58 @@
             font-size: 16px;
             padding: 10px;
         }
+
+    span{
+        color: red;
+    }
+spann{
+    color:rgb(109, 103, 165)}
     </style>
-    <div class="container"></div>
+<nav class="main-nav">
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li class="active"><a href="#">News</a></li>
+            <li><a href="#">Opiniofusan</a></li>
+            <li><a href="https://nouman007pro.github.io/viora4-sports/">Sport</a></li>
+            <li><a href="">Culture</a></li>
+            <li><a href="">Lifestyle</a></li>
+        </ul>
+        <flip-btn class="menu-toggle" onclick="toggleMenu()">☰</flip-btn>
+        <div class="logo">Viora<span>4</span></div>
+    </div>
+</nav>
+
+<!-- Sub Navigation -->
+<nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li class="active"><a href="#">News</a></li>
+               <li><a href="https://nouman007pro.github.io/viora4-sports/">Sport</a></li>
+            <li><a href="https://nouman007pro.github.io/viora4-fashion/">Lifestyle</a></li>
+            <li><a href="https://nouman007pro.github.io/viora4-blogs/">Blogs</a></li>
+
+            </ul>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <div class="logo">Viora<span>4</span></div>
+        </div>
+    </nav>
+
+    <!-- Sub Navigation -->
+    <nav class="sub-nav">
+        <ul>
+            <li><a href="https://nouman007pro.github.io/viora4-worldnews/">World</a></li>
+            <li><a href="https://nouman007pro.github.io/viora4-usa/"><spann>US Politics</spann></a></li>
+            <li><a href="https://nouman007pro.github.io/viora4-uk/">UK</a></li>
+            <li><a href="https://nouman007pro.github.io/viora4-climatecrisis/">Climate Crisis</a></li>
+            <li><a href="https://nouman007pro.github.io/viora4-middleeast/">Middle East</a></li>
+            <li><a href="https://nouman007pro.github.io/viora4-fashion/">Lifestyle</a></li>
+            <li><a href="https://nouman007pro.github.io/viora4-sports/">Sport</a></li>
+<li><a href="https://nouman007pro.github.io/viora.github.io/">Latest</a></li>
+
+        </ul>
+    </nav>
+
+<div class="container"></div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.querySelector(".container");
@@ -183,46 +402,9 @@
         "image": "img/12.png", 
         "shortDescription": "House prices in London decline amid economic uncertainty.", 
         "details": "Rising interest rates and economic pressures have led to a slowdown in the once-booming property market." 
-    },
-    { 
-        "title": "Wales Invests in Green Infrastructure", 
-        "image": "img/1.png", 
-        "shortDescription": "Wales focuses on sustainable urban development.", 
-        "details": "The Welsh government is funding projects to improve public transport, renewable energy, and eco-friendly urban planning." 
-    },
-    { 
-        "title": "UK Schools Face Teacher Shortages", 
-        "image": "img/1.png", 
-        "shortDescription": "Schools across the UK struggle to recruit teachers.", 
-        "details": "Many schools are facing staffing issues, prompting calls for better pay and working conditions to attract educators." 
-    },
-    { 
-        "title": "UK Supermarkets Cut Prices Amid Cost of Living Crisis", 
-        "image": "img/1.png", 
-        "shortDescription": "Retailers offer discounts to help struggling families.", 
-        "details": "Major supermarket chains have reduced prices on essential goods to support consumers during the ongoing economic crisis." 
-    },
-    { 
-        "title": "Bristol Introduces New Electric Bus Fleet", 
-        "image": "img/1.png", 
-        "shortDescription": "Bristol moves towards sustainable public transport.", 
-        "details": "The city has launched a fleet of electric buses to reduce emissions and improve air quality for residents." 
-    },
-    { 
-        "title": "UK to Strengthen Trade Ties with Asia", 
-        "image": "img/1.png", 
-        "shortDescription": "The UK seeks new trade agreements in Asia.", 
-        "details": "The British government is negotiating deals to boost exports and strengthen economic partnerships with Asian markets." 
-    },
-    { 
-        "title": "Oxford Scientists Develop New Cancer Treatment", 
-        "image": "img/1.png", 
-        "shortDescription": "Breakthrough research in cancer treatment at Oxford.", 
-        "details": "Scientists at the University of Oxford have developed a promising new therapy that could improve cancer survival rates." 
     }
 ]
 
-            
             for (let i = 0; i < 12; i++) {
                 const news = newsData[i % newsData.length];
                 const card = document.createElement("div");
@@ -233,16 +415,18 @@
                             <img src="${news.image}" alt="Image ${i + 1}">
                             <h3>${news.title}</h3>
                             <p>${news.shortDescription}</p>
-                            <button class="button">View Details</button>
+                            <flip-btn class="flip-btn">       <svg width="180px" height="60px" viewBox="0 0 180 60">
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" />
+                    </svg>View Details</flip-btn>
                         </div>
                         <div class="card-back">
                             <p>${news.details}</p>
-                            <button class="back-btn">Back</button>
+                            <flip-btn class="back-btn">Back</flip-btn>
                         </div>
                     </div>
                 `;
                 container.appendChild(card);
-                card.querySelector(".button").addEventListener("click", function() {
+                card.querySelector(".flip-btn").addEventListener("click", function() {
                     card.classList.add("flipped");
                 });
                 card.querySelector(".back-btn").addEventListener("click", function() {
@@ -250,6 +434,44 @@
                 });
             }
         });
-    </script>
+    </script><style>  .flip-btn {
+            width: 180px;
+            height: 60px;
+            cursor: pointer;
+            background:#012149 ;
+            border: 1px solid #91C9FF;
+            outline: none;
+            transition: 1s ease-in-out;
+            position: relative;
+            color: #eceff3;
+        }
+
+        svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            fill: none;
+            stroke: #fff;
+            stroke-dasharray: 150 480;
+            stroke-dashoffset: 150;
+            transition: 1s ease-in-out;
+        }
+
+        .flip-btn:hover {
+            background: #4F95DA;
+        }
+
+        .flip-btn:hover svg {
+            stroke-dashoffset: -480;
+        }
+
+        .flip-btn span {
+            color: white;
+            font-size: 18px;
+            font-weight: 100;
+        }
+    </style>
+
+
 </body>
 </html>
